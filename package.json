@@ -1,0 +1,21 @@
+{
+  "name": "catro-eixos-jobs",
+  "version": "1.0.0",
+  "description": "Controlador de jobs de catro-eixos",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "author": "Francisco Maseda Muiño <frmadem@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  },
+  "dependencies": {
+    "catro-eixos-js": "^1.6.1",
+    "immutable": "^3.8.1",
+    "redux": "^3.7.1",
+    "uuid": "^3.1.0"
+  }
+}
