@@ -2,6 +2,7 @@
   "name": "catro-eixos-jobs",
   "version": "1.0.0",
   "description": "Controlador de jobs de catro-eixos",
+  "repository": "https://github.com/prefapp/catro-eixos-jobs.git",
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive"
