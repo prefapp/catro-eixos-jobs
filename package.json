@@ -1,6 +1,6 @@
 {
   "name": "catro-eixos-jobs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Controlador de jobs de catro-eixos",
   "repository": "https://github.com/prefapp/catro-eixos-jobs.git",
   "main": "index.js",
