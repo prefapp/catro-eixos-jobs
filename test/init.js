@@ -33,6 +33,7 @@ describe("Init del sistema", function(){
             .then(({driver, store}) => {
 
                 let estadosJob = [];
+                let metasJob = [];
 
                 Driver = driver;    
 
@@ -50,10 +51,17 @@ describe("Init del sistema", function(){
                         estadosJob.push(
                             estado.jobs.getIn(["jobs", accion.id]).toJS()
                         );
+                    },
+
+                    "CAMBIO_META": (estado, accion) => {
+
+                        metasJob.push(
+                            estado.jobs.getIn(["jobs", accion.id]).toJS()
+                        );
                     }
                     
-
-                }))
+                  })
+                )
 
                 new ProcesoConEspera(
 
@@ -69,10 +77,13 @@ describe("Init del sistema", function(){
 
                     //expect(estadosJob.length).to.be.equal(4);
 
-                    expect(estadosJob[0].resultados.punto).to.be.equal(undefined);        
-                    expect(estadosJob[1].resultados.punto).to.be.equal(0);        
-                    expect(estadosJob[2].resultados.punto).to.be.equal(50);        
+                    expect(estadosJob[0].resultados.punto).to.be.equal(0);        
+                    expect(estadosJob[1].resultados.punto).to.be.equal(50);        
+                    expect(estadosJob[2].resultados.punto).to.be.equal(100);        
                     expect(estadosJob[3].resultados.punto).to.be.equal(100);        
+                    expect(estadosJob[3].resultados.estado).to.be.equal("OK");        
+
+                    expect(metasJob.pop().meta.status).to.equal("FINISHED");
 
                     driver.getJob(estadosJob[0].id)
 
