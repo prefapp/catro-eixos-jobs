@@ -6,6 +6,6 @@ module.exports = {
 
     Job: require("./lib/job.js"),
 
-    BuscarJobs: require("./lib/utiles/buscar_jobs.js")
+ //   TestearConexion: require("./lib/utiles/test_conexion.js")
 
 }
