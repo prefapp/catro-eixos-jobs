@@ -18,6 +18,10 @@
 
         status: "WAITING|PROCESSING|FINISHED",
 
+        porcentaje: 42.8, //de completado de la tarea
+
+        finalizado: "OK|KO|-", 
+
         creation_t: Date(),
 
         inicio_procesado_t: Date(),
