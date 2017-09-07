@@ -8,7 +8,13 @@
 {
     id: "asf",
 
+    args: {
+        //tal y como llegan a la tarea  
+    },
+
     meta: {
+
+        almacenado: true|flase, // de uso interno
 
         status: "WAITING|PROCESSING|FINISHED",
 
