@@ -1,6 +1,6 @@
 const {Proceso} = require("catro-eixos-js");
 
-const ProcesoConJobsMixin = require("../../lib/proceso_jobs.js");
+const ProcesoConJobsMixin = require("./proceso_jobs.js");
 
 module.exports = ProcesoConJobsMixin(
 

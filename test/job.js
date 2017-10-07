@@ -25,7 +25,7 @@ describe("Job - store funciona", function(){
 
         let e = estado.setEstadoJobs();
 
-        expect(is(e, fromJS({jobs: {}}))).to.be.equal(true)
+        expect(is(e, fromJS({jobs: {}, jobsMutados: {}}))).to.be.equal(true)
     })
 
     it("Permite agregar un job a la store", function(){
@@ -37,7 +37,7 @@ describe("Job - store funciona", function(){
 
         e = estado.altaJob(e, t);
 
-        let c = {jobs:{}};
+        let c = {jobs:{}, jobsMutados: {}};
 
         c.jobs[id] = t.RAW();
 

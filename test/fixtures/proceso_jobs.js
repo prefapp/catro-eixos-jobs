@@ -1,7 +1,7 @@
 
 const {mixin} = require("catro-eixos-js");
 
-const Job = require("./job.js");
+const Job = require("../../lib/job.js");
 
 const ProcesoConJobsMixin = mixin({
 
