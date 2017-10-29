@@ -6,12 +6,13 @@ module.exports = ProcesoConJobsMixin(
 
     class extends Proceso{
 
-        //DEPURAR() {return true}
+        DEPURAR() {return true}
 
         __r(){
             return [
 
                 "__crearJob",
+                "__puntoCero",
                 "__puntoA",
                 "__puntoB",
             ]
@@ -19,7 +20,16 @@ module.exports = ProcesoConJobsMixin(
         }
 
         __crearJob(){
-            this.iniciarJob();
+            return this.iniciarJob();
+        }
+
+        KO__crearJob(err){
+
+          this.error(`CREACION DE JOB: ${err}`)
+        }
+
+        __puntoCero(){
+
             this.resultado("punto", 0);
         }
 

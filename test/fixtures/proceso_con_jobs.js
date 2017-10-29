@@ -6,7 +6,7 @@ module.exports = ProcesoConJobsMixin(
 
     class extends Proceso{
 
-        //DEPURAR() {return true}
+        DEPURAR() {return true}
 
         __r(){
             return [
@@ -21,7 +21,7 @@ module.exports = ProcesoConJobsMixin(
 
         __crearJob(){
     
-            this.iniciarJob();
+            return this.iniciarJob();
         }
 
         EVAL__crearJob(){

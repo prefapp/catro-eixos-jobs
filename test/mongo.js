@@ -180,6 +180,7 @@ describe("Init del sistema en mongo", function(){
 
     it("Permite controlar bien la inserción del job antes de su consulta", function(hecho){
 
+
         let D;
         let id;
 

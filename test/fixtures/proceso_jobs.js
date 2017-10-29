@@ -15,17 +15,24 @@ const ProcesoConJobsMixin = mixin({
 
         let j = this.__convertirTareaEnJob();
 
-        this["job"] = j;
+        return j.esperarPorJobAlmacenado()
 
-        this["job"].PROCESANDO();
 
-        this.__agregarEvento(
+          .then(() =>{
 
-            "FIN_PROCESADO",
+           this["job"] = j;
 
-            () => { this["job"].FINALIZAR() }
+           this["job"].PROCESANDO();
 
-        );
+           this.__agregarEvento(
+
+               "FIN_PROCESADO",
+
+               () => { this["job"].FINALIZAR() }
+
+           );
+
+          })
     },
 
     "__convertirTareaEnJob": function(){
@@ -35,7 +42,7 @@ const ProcesoConJobsMixin = mixin({
         this.tarea.args = j.args;
         this.tarea.resultados = j.resultados;
         
-        j.ID_TAREA(this.tarea.id)
+        //j.ID_TAREA(this.tarea.id)
 
         return j;
     }

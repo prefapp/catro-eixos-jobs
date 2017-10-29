@@ -3,6 +3,7 @@ const {expect} = require("chai");
 const {Tarea} = require("catro-eixos-js");
 const ProcesoConJobs = require("./fixtures/proceso_con_jobs.js");
 const StoreJobs = require("../lib/store.js");
+const init = require("../lib/init.js");
 
 describe("Proceso con jobs", function(){
 
@@ -10,7 +11,10 @@ describe("Proceso con jobs", function(){
 
     before(function(){
 
-        store = new StoreJobs();
+      init({tipo: "memoria"})
+        .then((res) => {
+          store = res.store;
+        })
 
     })
 
